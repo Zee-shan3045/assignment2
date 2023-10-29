@@ -1,0 +1,254 @@
+Muhammad Zeeshan
+213013   
+                                           Window forms using handout 4:
+
+// Message Box Class
+
+    Public Class Form1:
+
+        Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MessageBox.Show("Hello Word!", "Help", MessageBoxButtons.OKCancel)        
+        End Sub
+        End Class
+
+// Windows Forms Class
+
+      Public Class HelloWord
+      Private Sub HelloWord_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+      MessageBox.Show("Hello Word!", "Help", MessageBoxButtons.OKCancel)
+      End Sub
+      End Class
+
+// Button Control
+
+     Public Class Form1
+     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+     MessageBox.Show("Hello Word!", "Help", MessageBoxButtons.OKCancel)       
+     End Sub
+     End Class
+
+// Lable Control
+
+       Public Class Form1
+       Private Sub Label1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+       MessageBox.Show("Hello Word!", "Help", MessageBoxButtons.OKCancel)   
+       End Sub
+       End Class
+
+// Text Control
+
+       Public Class Form1
+       Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+       MessageBox.Show(TextBox1.Text)
+       End Sub
+       End Class
+
+
+// RichTextBox Class
+
+       Public Class Form1
+       Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
+       MessageBox.Show("OK")
+       End Sub
+       End Class
+
+// CheckBox And Radio Button
+
+       using System;
+       using System.Collections.Generic;
+       using System.ComponentModel;
+       using System.Data;
+       using System.Drawing;
+       using System.Linq;
+       using System.Text;
+       using System.Threading.Tasks;
+       using System.Windows.Forms;
+
+       namespace _mza
+        {
+           public partial class Form1 : Form
+             {
+                public Form1()
+                {
+                  InitializeComponent();
+                }
+
+               private void Form1_Load(object sender, EventArgs e)
+                     {
+
+                      }
+
+              private void button1_Click(object sender, EventArgs e)
+               {
+                  String item = String.Empty;
+
+                  if (checkBox1.Checked)
+                    {
+                      item += "\n Pencil";
+                     }
+                  if (checkBox2.Checked)
+                    {
+                     item += "\n Shapnner";
+                    }
+                  if (checkBox3.Checked)
+                    {
+                     item += "\n Pen";
+                     }
+
+               MessageBox.Show("You have brought " + item);
+            }
+        }
+  }
+
+
+// Numeric UPDown
+
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel; 
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+
+    namespace NumericUPDOwn
+      {
+        public partial class Form1 : Form
+          {
+            //public Form1()
+           /*{
+               InitializeComponent();
+             }*/
+
+            private void Form1_Load(object sender, EventArgs e)
+              {
+
+              } 
+           private void Culculate_Click_1(object sender, EventArgs e)
+             {
+               decimal price = numericUpDown1.Value;
+               int quantity = (int)numericUpDown1.Value;
+               decimal total;
+
+               total = price * quantity;
+
+             MessageBox.Show(String.Format("Total Price is {0:C}", total));
+            }
+         }
+     }
+
+// Picture Box
+
+   using System;
+   using System.Collections.Generic;
+   using System.ComponentModel;
+   using System.Data;
+   using System.Drawing;
+   using System.Linq;
+   using System.Text;
+   using System.Threading.Tasks;
+   using System.Windows.Forms;
+
+   namespace NumericUPDOwn
+    {
+       public partial class Form1 : Form
+         {
+           //public Form1()
+            /*{
+               InitializeComponent();
+               }*/
+
+             private void Form1_Load(object sender, EventArgs e)
+              {
+
+              }
+
+             private void pictureBox1_Click(object sender, EventArgs e)
+              {
+                label1.Visible = false;
+                OpenFileDialog Op= new OpenFileDialog();
+
+                if(Op.ShowDialog() == DialogResult.OK ) 
+                  {
+                    pictureBox1.Image = new Bitmap(Op.FileName);
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                   }
+              }
+
+           }
+    }
+
+// DateTimePicker and Month Calender
+
+  using System;
+  using System.Collections.Generic;
+  using System.ComponentModel;
+  using System.Data;
+  using System.Drawing;
+  using System.Linq;
+  using System.Text;
+  using System.Threading.Tasks;
+  using System.Windows.Forms;
+ 
+  namespace NumericUPDOwn
+     {
+       public partial class Form1 : Form
+         {
+          //public Form1()
+            /*{
+               InitializeComponent();
+              }*/
+
+           private void Form1_Load(object sender, EventArgs e)
+             {
+
+             }
+
+          private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+           {
+              label3.Text = "DateTimePicker Date: " + dateTimePicker1.Text;
+           }
+
+          private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+           {
+             label3.Text = "Month Calender: " + monthCalendar1.Text;
+           }
+       }
+     }
+
+// Web Browser
+
+  using System;
+  using System.Collections.Generic;
+  using System.ComponentModel;
+  using System.Data;
+  using System.Drawing;
+  using System.Linq;
+  using System.Text;
+  using System.Threading.Tasks;
+  using System.Windows.Forms;
+
+  namespace NumericUPDOwn
+    {
+       public partial class Form1 : Form
+         {
+           //public Form1()
+            /*{
+                InitializeComponent();
+             }*/
+            private void Form1_Load(object sender, EventArgs e)
+            {
+   
+            }
+ 
+            private void button1_Click(object sender, EventArgs e)
+             {
+               webBrowser1.Navigate(textBox1.Text);
+             }
+          }
+     }
+     
+
+     
